@@ -2,6 +2,12 @@ import Alien from "./Alien";
 import EnemyLaser from "./EnemyLaser";
 import PlayerLaser from "./PlayerLaser";
 
+class KeyPressType
+{
+    static Down = "keydown";
+    static Up = "keyup";
+}
+
 class Game
 {
     constructor()
@@ -21,6 +27,9 @@ class Game
         this.playerLasers = [];
         this.lastFrameTime = 0;
         this.lastShot = 0;
+        this.ISKEYDOWN_SPACE = false;
+        this.ISKEYDOWN_LEFT = false;
+        this.ISKEYDOWN_RIGHT = false;
     }
 
     drawAllAliens(ctx, img) {
@@ -108,6 +117,28 @@ class Game
             }
             this.lastFrameTime = frameTime;
         }
+        if(this.ISKEYDOWN_SPACE)
+        {
+            if(this.lastFrameTime - this.lastShot > 45)
+            {
+                this.lastShot = this.lastFrameTime;
+                this.playerLasers.push(new PlayerLaser(this.player.position.x + 30, this.player.position.y - 64));
+            }
+        }
+        if(this.ISKEYDOWN_RIGHT)
+        {
+            if(this.player.position.x <= 1890)
+            {
+                this.player.position.x += 3;
+            }
+        }
+        if(this.ISKEYDOWN_LEFT)
+        {
+            if(this.player.position.x > 0) 
+            {
+                this.player.position.x -= 3;
+            }
+        }
     }
 
     performCollisionDetection()
@@ -185,15 +216,20 @@ class Game
         }
     }
 
-    handleKeyboardInput(event)
+    handleKeyboardInput(event, kpt)
     {
-        if(event.code === 'Space' && this.lastFrameTime - this.lastShot > 45) {
-            this.lastShot = this.lastFrameTime;
-            this.playerLasers.push(new PlayerLaser(this.player.position.x + 30, this.player.position.y - 64));
-        } else if(event.code === 'ArrowRight' && this.player.position.x <= 1890) {
-            this.player.position.x += 2;
-        } else if(event.code === 'ArrowLeft' && this.player.position.x > 0) {
-            this.player.position.x -= 2;    
+        if(event.code === 'Space' && kpt === KeyPressType.Down) {
+            this.ISKEYDOWN_SPACE = true;
+        } else if(event.code === 'Space' && kpt === KeyPressType.Up) {
+            this.ISKEYDOWN_SPACE = false;
+        } else if(event.code === 'ArrowRight' && kpt === KeyPressType.Down) {
+            this.ISKEYDOWN_RIGHT = true;
+        } else if(event.code === 'ArrowRight' && kpt === KeyPressType.Up) {
+            this.ISKEYDOWN_RIGHT = false;
+        } else if(event.code === 'ArrowLeft' && kpt === KeyPressType.Down) {
+            this.ISKEYDOWN_LEFT = true;
+        } else if(event.code === 'ArrowLeft' && kpt === KeyPressType.Up) {
+            this.ISKEYDOWN_LEFT = false;
         }
     }
 }

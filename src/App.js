@@ -37,13 +37,18 @@ const load = (loadContext) => {
 	loadContext.addContentSource("/svg/heart.svg", "heart");
 }
 
-const onKeyDown = (scancode) => {
-	game.handleKeyboardInput(scancode);
+const onKeyDown = (event) => {
+	game.handleKeyboardInput(event, 'keydown');
+}
+
+const onKeyUp = (event) => {
+	game.handleKeyboardInput(event, 'keyup');
 }
 
 function App() {
 	game = new Game();
 	window.addEventListener('keydown', onKeyDown, false);
+	window.addEventListener('keyup', onKeyUp, false);
 	return (
 		<>
 			<Canvas draw={draw} load={load}/>
