@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="153.641" y="120.782" width="169.627" height="20.426" style="stroke: rgb(0, 0, 0); fill: rgb(118, 186, 64);"/>
+  <rect x="131.439" y="142.096" width="20.426" height="93.25" style="stroke: rgb(0, 0, 0); fill: rgb(120, 186, 87);"/>
+  <rect x="322.38" y="140.32" width="22.202" height="95.915" style="stroke: rgb(0, 0, 0); fill: rgb(119, 186, 77);"/>
+  <rect x="181.172" y="205.151" width="20.426" height="20.426" style="stroke: rgb(0, 0, 0); fill: rgb(120, 186, 87);"/>
+  <rect x="264.654" y="206.927" width="23.979" height="21.314" style="stroke: rgb(0, 0, 0); fill: rgb(120, 186, 87);"/>
+  <rect x="150.977" y="232.682" width="171.403" height="18.65" style="stroke: rgb(0, 0, 0); fill: rgb(120, 186, 87);"/>
+  <rect x="166.075" y="253.108" width="18.65" height="38.188" style="stroke: rgb(0, 0, 0); fill: rgb(45, 70, 36);"/>
+  <rect x="207.815" y="254.885" width="50.622" height="87.034" style="stroke: rgb(0, 0, 0); fill: rgb(121, 186, 95);"/>
+  <rect x="288.632" y="254.885" width="19.538" height="33.748" style="stroke: rgb(0, 0, 0); fill: rgb(45, 70, 36);"/>
+  <rect x="126.998" y="95.027" width="23.979" height="23.091" style="stroke: rgb(0, 0, 0); fill: rgb(117, 186, 46);"/>
+  <rect x="323.268" y="96.803" width="21.314" height="21.314" style="stroke: rgb(0, 0, 0); stroke-linecap: round; fill: rgb(119, 186, 77);"/>
+  <rect x="220.249" y="313.499" width="22.202" height="81.705" style="stroke: rgb(0, 0, 0); fill: rgb(45, 70, 39);"/>
+</svg>
