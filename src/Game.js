@@ -6,37 +6,10 @@ class Game
 {
     constructor()
     {
-        this.aliens = [
-            new Alien(32, 32),
-            new Alien(32 + (64 * 1), 32),
-            new Alien(32 + (64 * 2), 32),
-            new Alien(32 + (64 * 3), 32),
-            new Alien(32 + (64 * 4), 32),
-            new Alien(32 + (64 * 5), 32),
-            new Alien(32 + (64 * 6), 32),
-            new Alien(32 + (64 * 7), 32),
-            new Alien(32 + (64 * 8), 32),
-            new Alien(32 + (64 * 9), 32),
-            new Alien(32 + (64 * 10), 32),
-            new Alien(32 + (64 * 11), 32),
-            new Alien(32 + (64 * 12), 32),
-            new Alien(32 + (64 * 13), 32),
-            new Alien(32 + (64 * 14), 32),
-            new Alien(32 + (64 * 15), 32),
-            new Alien(32 + (64 * 16), 32),
-            new Alien(32 + (64 * 17), 32),
-            new Alien(32 + (64 * 18), 32),
-            new Alien(32 + (64 * 19), 32),
-            new Alien(32 + (64 * 20), 32),
-            new Alien(32 + (64 * 21), 32),
-            new Alien(32 + (64 * 22), 32),
-            new Alien(32 + (64 * 23), 32),
-            new Alien(32 + (64 * 24), 32),
-            new Alien(32 + (64 * 25), 32),
-            new Alien(32 + (64 * 26), 32),
-            new Alien(32 + (64 * 27), 32),
-            new Alien(32 + (64 * 28), 32),
-        ];
+        this.aliens = [];
+        for(let i = 0; i < 29; i++) {
+            this.aliens.push(new Alien(32 + (64 * i), 32));
+        }
         this.player = {
             position: {
                 x: 1920/2 - 32,
